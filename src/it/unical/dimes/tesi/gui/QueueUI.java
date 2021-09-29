@@ -73,7 +73,7 @@ public class QueueUI {
 		panel_3.setBackground(new Color(255, 160, 122));
 
 		JPanel panel_2_1 = new JPanel();
-		panel_2_1.setBackground(new Color(152, 251, 152));
+		panel_2_1.setBackground(new Color(60, 179, 113));
 
 		JPanel panel_1_1 = new JPanel();
 
@@ -125,6 +125,122 @@ public class QueueUI {
 										.addPreferredGap(ComponentPlacement.UNRELATED)
 										.addComponent(panel_1_1, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
 						.addContainerGap()));
+		
+		JLabel lblNewLabel_2_2 = new JLabel("BOTTOM");
+		lblNewLabel_2_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_2.setForeground(Color.WHITE);
+		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		GroupLayout gl_panel_2_1 = new GroupLayout(panel_2_1);
+		gl_panel_2_1.setHorizontalGroup(
+			gl_panel_2_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2_1.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2_2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(432, Short.MAX_VALUE))
+		);
+		gl_panel_2_1.setVerticalGroup(
+			gl_panel_2_1.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2_1.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(73, Short.MAX_VALUE))
+		);
+		panel_2_1.setLayout(gl_panel_2_1);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("LADDER");
+		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1 = new JLabel("N. rungs:");
+		lblNewLabel_2_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1 = new JLabel("Avg N. Buckets x Rung:");
+		lblNewLabel_2_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("Avg N. Items x Buck.:");
+		lblNewLabel_2_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("N. Items:");
+		lblNewLabel_2_1_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1_1_1_1 = new JLabel("N. Empty rungs:");
+		lblNewLabel_2_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1_1_1_1_1 = new JLabel("N. Empty rungs:");
+		lblNewLabel_2_1_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1_1_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
+		gl_panel_3.setHorizontalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_3.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblNewLabel_2_1, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_3.createSequentialGroup()
+							.addGap(35)
+							.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNewLabel_2_1_1, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_2_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_2_1_1_1_1, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_2_1_1_1, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNewLabel_2_1_1_1_1_1_1)
+								.addComponent(lblNewLabel_2_1_1_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE))))
+					.addContainerGap(285, Short.MAX_VALUE))
+		);
+		gl_panel_3.setVerticalGroup(
+			gl_panel_3.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_3.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblNewLabel_2_1_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_2_1_1_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_2_1_1_1_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_2_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_2_1_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_2_1_1_1_1_1_1_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(25, Short.MAX_VALUE))
+		);
+		panel_3.setLayout(gl_panel_3);
+		
+		JLabel lblNewLabel_2 = new JLabel("TOP");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		lblNewLabel_2.setForeground(Color.WHITE);
+		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2)
+					.addContainerGap(480, Short.MAX_VALUE))
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_2)
+					.addContainerGap(73, Short.MAX_VALUE))
+		);
+		panel_2.setLayout(gl_panel_2);
 
 		JLabel lblNewLabel = new JLabel("Stats:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
