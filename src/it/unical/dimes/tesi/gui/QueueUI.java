@@ -25,6 +25,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JMenu;
+import javax.swing.JComboBox;
 
 public class QueueUI {
 
@@ -77,7 +78,7 @@ public class QueueUI {
 
 		JPanel panel_1_1 = new JPanel();
 
-		JLabel lblNewLabel_1 = new JLabel("Logs:");
+		JLabel lblNewLabel_1 = new JLabel("Breakpoints:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
 
@@ -95,36 +96,74 @@ public class QueueUI {
 								.addPreferredGap(ComponentPlacement.RELATED)
 								.addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)));
 		panel_1_1.setLayout(gl_panel_1_1);
+		
+		JPanel panel_4 = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.TRAILING).addGroup(groupLayout
-				.createSequentialGroup().addContainerGap()
-				.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
 						.addComponent(panel_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
 						.addComponent(panel_2_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
-				.addGap(18)
-				.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-						.addComponent(panel_1_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-						.addComponent(panel_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-				.addContainerGap()));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup().addContainerGap()
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
-								.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addGroup(groupLayout.createSequentialGroup()
-										.addComponent(panel_3, GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE).addGap(7)
-										.addComponent(panel_2_1, GroupLayout.PREFERRED_SIZE, 104,
-												GroupLayout.PREFERRED_SIZE))
-								.addGroup(groupLayout.createSequentialGroup().addGap(9)
-										.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-										.addPreferredGap(ComponentPlacement.UNRELATED)
-										.addComponent(panel_1_1, GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)))
-						.addContainerGap()));
+					.addGap(18)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(panel_4, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+						.addComponent(panel_1_1, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+						.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(panel_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(7)
+							.addComponent(panel_2_1, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE))
+						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+							.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 36, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(panel_1_1, GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)))
+					.addContainerGap())
+		);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setEditable(true);
+		
+		JLabel lblNewLabel_3 = new JLabel("Code:");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		GroupLayout gl_panel_4 = new GroupLayout(panel_4);
+		gl_panel_4.setHorizontalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_4.createSequentialGroup()
+					.addGap(44)
+					.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+					.addGap(18)
+					.addComponent(comboBox, 0, 275, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel_4.setVerticalGroup(
+			gl_panel_4.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_4.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel_3)
+					.addContainerGap(10, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_panel_4.createSequentialGroup()
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addComponent(comboBox, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		panel_4.setLayout(gl_panel_4);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("BOTTOM");
 		lblNewLabel_2_2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -177,7 +216,7 @@ public class QueueUI {
 		lblNewLabel_2_1_1_1_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
 		
-		JLabel lblNewLabel_2_1_1_1_1_1_1_1 = new JLabel("N. Empty rungs:");
+		JLabel lblNewLabel_2_1_1_1_1_1_1_1 = new JLabel("N. Empty");
 		lblNewLabel_2_1_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2_1_1_1_1_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_2_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
@@ -225,13 +264,33 @@ public class QueueUI {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel_2.setForeground(Color.WHITE);
+		
+		JLabel lblNewLabel_2_1_1_2 = new JLabel("NTop:");
+		lblNewLabel_2_1_1_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_2.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1_2 = new JLabel("MinTS:");
+		lblNewLabel_2_1_1_1_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1_2.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		
+		JLabel lblNewLabel_2_1_1_1_1_2 = new JLabel("MaxTS:");
+		lblNewLabel_2_1_1_1_1_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_2_1_1_1_1_2.setForeground(Color.WHITE);
+		lblNewLabel_2_1_1_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 17));
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel_2)
-					.addContainerGap(480, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel_2_1_1_2, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_2_1_1_1_2, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_2_1_1_1_1_2, GroupLayout.PREFERRED_SIZE, 192, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(266, Short.MAX_VALUE))
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
@@ -239,10 +298,18 @@ public class QueueUI {
 					.addContainerGap()
 					.addComponent(lblNewLabel_2)
 					.addContainerGap(73, Short.MAX_VALUE))
+				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addGap(19)
+					.addComponent(lblNewLabel_2_1_1_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addGap(6)
+					.addComponent(lblNewLabel_2_1_1_1_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addGap(6)
+					.addComponent(lblNewLabel_2_1_1_1_1_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 
-		JLabel lblNewLabel = new JLabel("Stats:");
+		JLabel lblNewLabel = new JLabel("Variabili:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
 
@@ -265,17 +332,21 @@ public class QueueUI {
 		btnBack.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnBack.setBackground(new Color(70, 130, 180));
 
-		JButton btnReset = new JButton("RESET");
+		JButton btnReset = new JButton("BREAKPOINT");
 		btnReset.setForeground(Color.WHITE);
 		btnReset.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnReset.setBackground(Color.GRAY);
 
-		JButton btnEnqueue = new JButton("ENQUEUE");
+		JButton btnEnqueue = new JButton("PAUSE");
 		btnEnqueue.setForeground(Color.WHITE);
 		btnEnqueue.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnEnqueue.setBackground(new Color(178, 34, 34));
 
-		JButton btnDequeue = new JButton("DEQUEUE");
+		JButton btnDequeue = new JButton("RESUME");
+		btnDequeue.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnDequeue.setForeground(Color.WHITE);
 		btnDequeue.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnDequeue.setBackground(new Color(60, 179, 113));
@@ -308,12 +379,6 @@ public class QueueUI {
 
 		JMenu mnNewMenu = new JMenu("Opzioni");
 		menuBar.add(mnNewMenu);
-
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Inizializza la coda");
-		mnNewMenu.add(mntmNewMenuItem_2);
-
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Esegui test");
-		mnNewMenu.add(mntmNewMenuItem_1);
 		
 		mnNewMenu.add(CommonsPopUp.credits(frame));
 	}

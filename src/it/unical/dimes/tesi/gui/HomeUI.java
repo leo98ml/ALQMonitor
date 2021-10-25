@@ -25,10 +25,17 @@ import it.unical.dimes.tesi.gui.utils.CommonsPopUp;
 
 import javax.swing.SwingConstants;
 import javax.swing.JMenu;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import javax.swing.BoxLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public class HomeUI {
 
 	private JFrame frmAlqMonitor;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -64,101 +71,6 @@ public class HomeUI {
 		frmAlqMonitor.setResizable(true);
 		frmAlqMonitor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		JPanel panel_2 = new JPanel();
-		
-		JLabel lblNewLabel = new JLabel("Choose Parameters:");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		
-		JLabel label = new JLabel("");
-		
-		JPanel panel_1 = new JPanel();
-		
-		JPanel panel = new JPanel();
-		
-		JButton btnNewButton = new JButton("START");
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(178, 34, 34));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		GroupLayout groupLayout = new GroupLayout(frmAlqMonitor.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(panel, GroupLayout.DEFAULT_SIZE, 865, Short.MAX_VALUE))
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(label)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)))
-					.addContainerGap())
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
-						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 373, Short.MAX_VALUE)
-						.addComponent(label, GroupLayout.PREFERRED_SIZE, 222, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-		);
-		
-		JScrollPane scrollPane = new JScrollPane();
-		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
-		gl_panel_2.setHorizontalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(155)
-					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addGap(156))
-				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE))
-		);
-		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup()
-					.addGap(5)
-					.addComponent(lblNewLabel)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE))
-		);
-		panel_2.setLayout(gl_panel_2);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		panel.add(btnNewButton);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
-		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane_1, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
-		);
-		gl_panel_1.setVerticalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE))
-		);
-		
-		JTextArea txtrInQuestaSchermata = new JTextArea();
-		txtrInQuestaSchermata.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		scrollPane_1.setViewportView(txtrInQuestaSchermata);
-		txtrInQuestaSchermata.setEditable(false);
-		txtrInQuestaSchermata.setWrapStyleWord(true);
-		txtrInQuestaSchermata.setLineWrap(true);
-		txtrInQuestaSchermata.setText("In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.In questa schermata si possono impostare i vari parametri della Adaptive Ladder Queue e lanciare appunto un esecuzione.");
-		txtrInQuestaSchermata.setCaretPosition(0);
-		panel_1.setLayout(gl_panel_1);
-		frmAlqMonitor.getContentPane().setLayout(groupLayout);
-		
 		JMenuBar menuBar = new JMenuBar();
 		frmAlqMonitor.setJMenuBar(menuBar);
 		
@@ -166,5 +78,46 @@ public class HomeUI {
 		menuBar.add(mnNewMenu);
 		
 		mnNewMenu.add(CommonsPopUp.credits(frmAlqMonitor));
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField.setColumns(60);
+		
+		JButton btnNewButton = new JButton("START");
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
+		btnNewButton.setBackground(new Color(178, 34, 34));
+		
+		JLabel lblNewLabel = new JLabel("Inserisci indirizzo debugger:");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		GroupLayout groupLayout = new GroupLayout(frmAlqMonitor.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(172)
+					.addComponent(textField)
+					.addGap(167))
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGap(308)
+					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+					.addGap(301))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(390)
+					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(408))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(151)
+					.addComponent(lblNewLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(btnNewButton)
+					.addContainerGap(183, Short.MAX_VALUE))
+		);
+		frmAlqMonitor.getContentPane().setLayout(groupLayout);
 	}
 }
