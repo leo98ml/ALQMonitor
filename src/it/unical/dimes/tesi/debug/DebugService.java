@@ -28,6 +28,4 @@ public interface DebugService {
 	Breakpoint insertBreakpintOnGrouping();
 	void remove(Breakpoint b);
 	
-	
-	
 }

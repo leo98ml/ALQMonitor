@@ -140,7 +140,7 @@ public class QueueUI {
 		JComboBox comboBox = new JComboBox();
 		comboBox.setEditable(true);
 		
-		JLabel lblNewLabel_3 = new JLabel("Code:");
+		JLabel lblNewLabel_3 = new JLabel("Selez. coda");
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		GroupLayout gl_panel_4 = new GroupLayout(panel_4);
 		gl_panel_4.setHorizontalGroup(
@@ -325,6 +325,9 @@ public class QueueUI {
 				.addGroup(gl_panel_1.createSequentialGroup().addComponent(lblNewLabel)
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)));
+		
+		JPanel panel_5 = new JPanel();
+		scrollPane.setViewportView(panel_5);
 		panel_1.setLayout(gl_panel_1);
 
 		JButton btnBack = new JButton("BACK");
