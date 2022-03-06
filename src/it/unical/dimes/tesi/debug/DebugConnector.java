@@ -42,8 +42,9 @@ public class DebugConnector implements DebugService {
 	private VirtualMachine remoteJVM = null;
 	private List<ObjectReference> alqs = null;
 	private ObjectReference selecteQueue = null;
+	private static DebugConnector dc = null;
 	private HashMap<Breakpoint, BreakpointRequest> breakpointRequests = null;
-
+	
 	private DebugConnector() {
 	};
 
@@ -58,14 +59,13 @@ public class DebugConnector implements DebugService {
 		return remoteJVM;
 	}
 
-	private static DebugConnector dc = null;
-
 	public List<ObjectReference> getALQS() {
 		getAlqs();
 		return this.alqs;
 	}
 
 	public static DebugConnector getInstance() {
+		if (dc==null) throw new RuntimeException("Prima va creata l'istanza");
 		return dc;
 	}
 
@@ -354,10 +354,6 @@ public class DebugConnector implements DebugService {
 
 	public HashSet<Breakpoint> getBreakpoints() {
 		return breakpoints;
-	}
-
-	public void setBreakpoints(HashSet<Breakpoint> breakpoints) {
-		this.breakpoints = breakpoints;
 	}
 
 	public Breakpoint getBreakpoint(BreakpointRequest be) {

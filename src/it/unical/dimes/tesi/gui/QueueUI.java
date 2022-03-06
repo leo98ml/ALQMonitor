@@ -71,7 +71,8 @@ public class QueueUI {
 	private JPanel panel_6 = new JPanel();
 	private JPanel panel_5 = new JPanel();
 	private ObjectReference selectedAlq = null;
-	private JComboBox<ObjectReference> comboBox= new JComboBox<ObjectReference>();
+	private JComboBox<ObjectReference> comboBox = new JComboBox<ObjectReference>();
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -90,29 +91,29 @@ public class QueueUI {
 
 		JPanel panel_1 = new JPanel();
 
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(204, 102, 102));
+		JPanel panelTop = new JPanel();
+		panelTop.setBackground(new Color(204, 102, 102));
 
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 160, 122));
+		JPanel panelLadder = new JPanel();
+		panelLadder.setBackground(new Color(255, 160, 122));
 
-		JPanel panel_2_1 = new JPanel();
-		panel_2_1.setBackground(new Color(60, 179, 113));
+		JPanel panelBottom = new JPanel();
+		panelBottom.setBackground(new Color(60, 179, 113));
 
 		JPanel panel_1_1 = new JPanel();
 
-		JLabel lblNewLabel_1 = new JLabel("Breakpoints:");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		JLabel labelBreakpoints = new JLabel("Breakpoints:");
+		labelBreakpoints.setHorizontalAlignment(SwingConstants.CENTER);
+		labelBreakpoints.setFont(new Font("Tahoma", Font.PLAIN, 17));
 
 		JScrollPane scrollPane_1 = new JScrollPane();
 		GroupLayout gl_panel_1_1 = new GroupLayout(panel_1_1);
 		gl_panel_1_1.setHorizontalGroup(gl_panel_1_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1_1.createSequentialGroup().addGap(110)
-						.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE).addGap(88))
+						.addComponent(labelBreakpoints, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE).addGap(88))
 				.addComponent(scrollPane_1, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE));
 		gl_panel_1_1.setVerticalGroup(gl_panel_1_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1_1.createSequentialGroup().addComponent(lblNewLabel_1)
+				.addGroup(gl_panel_1_1.createSequentialGroup().addComponent(labelBreakpoints)
 						.addPreferredGap(ComponentPlacement.RELATED).addComponent(scrollPane_1)));
 
 		updatePanelBP(dc, frame, scrollPane_1);
@@ -123,9 +124,9 @@ public class QueueUI {
 		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.TRAILING).addGroup(groupLayout
 				.createSequentialGroup().addContainerGap()
 				.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
-						.addComponent(panel_3, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
-						.addComponent(panel_2_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
+						.addComponent(panelTop, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+						.addComponent(panelLadder, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+						.addComponent(panelBottom, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE))
 				.addGap(18)
 				.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 						.addComponent(panel_1_1, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
@@ -136,7 +137,7 @@ public class QueueUI {
 		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup().addContainerGap()
 						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-								.addComponent(panel_2, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
+								.addComponent(panelTop, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)
 								.addComponent(
 										panel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
 										GroupLayout.PREFERRED_SIZE))
@@ -144,9 +145,9 @@ public class QueueUI {
 						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 								.addGroup(groupLayout
 										.createSequentialGroup()
-										.addComponent(panel_3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
+										.addComponent(panelLadder, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE,
 												Short.MAX_VALUE)
-										.addGap(7).addComponent(panel_2_1, GroupLayout.PREFERRED_SIZE, 104,
+										.addGap(7).addComponent(panelBottom, GroupLayout.PREFERRED_SIZE, 104,
 												GroupLayout.PREFERRED_SIZE))
 								.addGroup(groupLayout.createSequentialGroup()
 										.addComponent(panel_4, GroupLayout.PREFERRED_SIZE, 36,
@@ -160,79 +161,77 @@ public class QueueUI {
 		panel_4.setLayout(new BorderLayout(0, 0));
 		panel_4.add(comboBox);
 
-		JLabel lblNewLabel_3_1 = new JLabel(" Selez. coda: ");
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		panel_4.add(lblNewLabel_3_1, BorderLayout.WEST);
+		JLabel labelComboCoda = new JLabel(" Selez. coda: ");
+		labelComboCoda.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		panel_4.add(labelComboCoda, BorderLayout.WEST);
 
-		JLabel lblNewLabel_2_2 = new JLabel("BOTTOM");
-		lblNewLabel_2_2.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_2_2.setForeground(Color.WHITE);
-		lblNewLabel_2_2.setFont(new Font("Tahoma", Font.BOLD, 17));
-		GroupLayout gl_panel_2_1 = new GroupLayout(panel_2_1);
+		JLabel labelBottom = new JLabel("BOTTOM");
+		labelBottom.setHorizontalAlignment(SwingConstants.LEFT);
+		labelBottom.setForeground(Color.WHITE);
+		labelBottom.setFont(new Font("Tahoma", Font.BOLD, 17));
+		GroupLayout gl_panel_2_1 = new GroupLayout(panelBottom);
 		gl_panel_2_1.setHorizontalGroup(gl_panel_2_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2_1.createSequentialGroup().addContainerGap()
-						.addComponent(lblNewLabel_2_2, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
+						.addComponent(labelBottom, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap(432, Short.MAX_VALUE)));
 		gl_panel_2_1.setVerticalGroup(gl_panel_2_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2_1.createSequentialGroup().addContainerGap()
-						.addComponent(lblNewLabel_2_2, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addComponent(labelBottom, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap(73, Short.MAX_VALUE)));
-		panel_2_1.setLayout(gl_panel_2_1);
+		panelBottom.setLayout(gl_panel_2_1);
 
-		JLabel lblNewLabel_2_1 = new JLabel("LADDER");
-		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_2_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.BOLD, 17));
-		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
+		JLabel labelLadder = new JLabel("LADDER");
+		labelLadder.setHorizontalAlignment(SwingConstants.LEFT);
+		labelLadder.setForeground(Color.WHITE);
+		labelLadder.setFont(new Font("Tahoma", Font.BOLD, 17));
+		GroupLayout gl_panel_3 = new GroupLayout(panelLadder);
 		gl_panel_3.setHorizontalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_3.createSequentialGroup()
 						.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel_3.createSequentialGroup().addContainerGap().addComponent(
-										lblNewLabel_2_1, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_panel_3.createSequentialGroup().addContainerGap().addComponent(labelLadder,
+										GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE))
 								.addGroup(gl_panel_3.createSequentialGroup().addGap(35)
-										.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
-										))).addContainerGap(285, Short.MAX_VALUE)));
+										.addGroup(gl_panel_3.createParallelGroup(Alignment.LEADING))))
+						.addContainerGap(285, Short.MAX_VALUE)));
 		gl_panel_3.setVerticalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_3.createSequentialGroup().addContainerGap()
-						.addComponent(lblNewLabel_2_1, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addContainerGap(25, Short.MAX_VALUE)));
-		panel_3.setLayout(gl_panel_3);
-		JLabel lblNewLabel_2 = new JLabel("TOP");
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblNewLabel_2.setForeground(Color.WHITE);
+						.addComponent(labelLadder, GroupLayout.PREFERRED_SIZE, 21, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.UNRELATED).addContainerGap(25, Short.MAX_VALUE)));
+		panelLadder.setLayout(gl_panel_3);
+		JLabel labelTop = new JLabel("TOP");
+		labelTop.setHorizontalAlignment(SwingConstants.LEFT);
+		labelTop.setFont(new Font("Tahoma", Font.BOLD, 17));
+		labelTop.setForeground(Color.WHITE);
 
-
-		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		GroupLayout gl_panel_2 = new GroupLayout(panelTop);
 		gl_panel_2.setHorizontalGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup().addContainerGap().addComponent(lblNewLabel_2)
+				.addGroup(gl_panel_2.createSequentialGroup().addContainerGap().addComponent(labelTop)
 						.addPreferredGap(ComponentPlacement.UNRELATED)
-						.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						).addContainerGap(266, Short.MAX_VALUE)));
+						.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING))
+						.addContainerGap(266, Short.MAX_VALUE)));
 		gl_panel_2.setVerticalGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_2.createSequentialGroup().addContainerGap().addComponent(lblNewLabel_2)
+				.addGroup(gl_panel_2.createSequentialGroup().addContainerGap().addComponent(labelTop)
 						.addContainerGap(73, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup().addGap(19)
 						.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
-		panel_2.setLayout(gl_panel_2);
+		panelTop.setLayout(gl_panel_2);
 
-		JLabel lblNewLabel = new JLabel("Variabili:");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		JLabel labelVariabili = new JLabel("Variabili:");
+		labelVariabili.setHorizontalAlignment(SwingConstants.CENTER);
+		labelVariabili.setFont(new Font("Tahoma", Font.PLAIN, 17));
 
 		JScrollPane scrollPane = new JScrollPane();
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1.createSequentialGroup().addGap(110)
-						.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE).addGap(88))
+						.addComponent(labelVariabili, GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE).addGap(88))
 				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE));
 		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_panel_1.createSequentialGroup().addComponent(lblNewLabel)
+				.addGroup(gl_panel_1.createSequentialGroup().addComponent(labelVariabili)
 						.addPreferredGap(ComponentPlacement.RELATED)
 						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)));
 
-		updatePanelVar(dc, f, scrollPane,comboBox);
+		updatePanelVar(dc, f, scrollPane, comboBox);
 
 		panel_1.setLayout(gl_panel_1);
 
@@ -268,7 +267,7 @@ public class QueueUI {
 					btnPause.setEnabled(false);
 					btnResume.setEnabled(true);
 					updateComboBox(dc);
-					updatePanelVar(dc, f, scrollPane,comboBox);
+					updatePanelVar(dc, f, scrollPane, comboBox);
 					SwingUtilities.updateComponentTreeUI(frame);
 				}
 			}
@@ -288,7 +287,7 @@ public class QueueUI {
 				}
 				updateComboBox(dc);
 				updatePanelBP(dc, frame, scrollPane_1);
-				updatePanelVar(dc, f, scrollPane,comboBox);
+				updatePanelVar(dc, f, scrollPane, comboBox);
 				SwingUtilities.updateComponentTreeUI(frame);
 				dc.resume();
 			}
@@ -326,7 +325,7 @@ public class QueueUI {
 
 		JMenu mnNewMenu = new JMenu("Opzioni");
 		menuBar.add(mnNewMenu);
-		panel_2_1.addMouseListener(new MouseAdapter() {
+		panelBottom.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (!paused) {
@@ -335,7 +334,7 @@ public class QueueUI {
 					btnPause.setEnabled(false);
 					btnResume.setEnabled(true);
 					updateComboBox(dc);
-					updatePanelVar(dc, f, scrollPane,comboBox);
+					updatePanelVar(dc, f, scrollPane, comboBox);
 					SwingUtilities.updateComponentTreeUI(frame);
 				}
 				JDialog d = new JDialog(frame, "Bottom Level", true);
@@ -344,7 +343,7 @@ public class QueueUI {
 
 			}
 		});
-		panel_3.addMouseListener(new MouseAdapter() {
+		panelLadder.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (!paused) {
@@ -353,7 +352,7 @@ public class QueueUI {
 					btnPause.setEnabled(false);
 					btnResume.setEnabled(true);
 					updateComboBox(dc);
-					updatePanelVar(dc, f, scrollPane,comboBox);
+					updatePanelVar(dc, f, scrollPane, comboBox);
 					SwingUtilities.updateComponentTreeUI(frame);
 				}
 				JDialog d = new JDialog(frame, "Ladder Level", true);
@@ -362,7 +361,7 @@ public class QueueUI {
 
 			}
 		});
-		panel_2.addMouseListener(new MouseAdapter() {
+		panelTop.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (!paused) {
@@ -371,7 +370,7 @@ public class QueueUI {
 					btnPause.setEnabled(false);
 					btnResume.setEnabled(true);
 					updateComboBox(dc);
-					updatePanelVar(dc, f, scrollPane,comboBox);
+					updatePanelVar(dc, f, scrollPane, comboBox);
 					SwingUtilities.updateComponentTreeUI(frame);
 				}
 				JDialog d = new JDialog(frame, "Top Level", true);
@@ -451,12 +450,12 @@ public class QueueUI {
 		}
 		if (dc.getALQS() != null && !dc.getALQS().isEmpty()) {
 			comboBox.setSelectedItem(dc.getALQS().get(0));
-			if (selectedAlq!= null && dc.getALQS().contains(selectedAlq)) {
+			if (selectedAlq != null && dc.getALQS().contains(selectedAlq)) {
 				comboBox.setSelectedItem(selectedAlq);
 			}
 			dc.setSelecteQueue((ObjectReference) comboBox.getSelectedItem());
-			this.selectedAlq=(ObjectReference) comboBox.getSelectedItem();
-		}		
+			this.selectedAlq = (ObjectReference) comboBox.getSelectedItem();
+		}
 	}
 
 	private void updatePanelBP(DebugConnector dc, JFrame frame2, JScrollPane scrollPane_1) {
@@ -491,12 +490,11 @@ public class QueueUI {
 		}
 	}
 
-	private void updatePanelVar(DebugConnector dc, JFrame frame2, JScrollPane scrollPane_1,JComboBox<ObjectReference> comboBox) {
+	private void updatePanelVar(DebugConnector dc, JFrame frame2, JScrollPane scrollPane_1,
+			JComboBox<ObjectReference> comboBox) {
 		panel_5.removeAll();
 		scrollPane_1.setViewportView(panel_5);
 		panel_5.setLayout(new GridLayout(0, 1, 0, 0));
-
-		// Variabili coda
 		dc.pause();
 		for (Variabile v : dc.getVariabiliALQ((ObjectReference) comboBox.getSelectedItem())) {
 			JLabel l = new JLabel(v.getNome() + ": " + v.getValore() + ";");

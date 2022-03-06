@@ -213,7 +213,6 @@ public class Driver {
 
 		Action x = null;
 		boolean si = false;
-		int i = 0;
 		Event e = null;
 		for (int j = 0; j < qsize; j++) {
 			x = li.next();
@@ -245,9 +244,6 @@ public class Driver {
 					break;
 				}
 			}
-
-			i++;
-
 		}
 
 		if (si) {

@@ -78,10 +78,10 @@ public class TopElementsUI {
 						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)));
 		panel.setLayout(new BorderLayout(0, 0));
 
-		JLabel lblNewLabel_1 = new JLabel("Informazioni livello TOP");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewLabel_1, BorderLayout.NORTH);
+		JLabel labelInfoLivTop = new JLabel("Informazioni livello TOP");
+		labelInfoLivTop.setFont(new Font("Tahoma", Font.BOLD, 17));
+		labelInfoLivTop.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(labelInfoLivTop, BorderLayout.NORTH);
 
 		JPanel panel_3 = new JPanel();
 		panel.add(panel_3, BorderLayout.CENTER);
@@ -89,8 +89,8 @@ public class TopElementsUI {
 
 		DebugConnector dc = DebugConnector.getInstance();
 		List<Variabile> listaTimestampTop = dc.getTop(dc.getSelecteQueue());
-		
-		JLabel nElementiInTop = new JLabel("nElementiInTop: "+listaTimestampTop.size()+";");
+
+		JLabel nElementiInTop = new JLabel("nElementiInTop: " + listaTimestampTop.size() + ";");
 		nElementiInTop.setHorizontalAlignment(SwingConstants.CENTER);
 		nElementiInTop.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_3.add(nElementiInTop);
@@ -98,16 +98,16 @@ public class TopElementsUI {
 		JPanel panel_2 = new JPanel();
 		scrollPane.setColumnHeaderView(panel_2);
 
-		JLabel lblNewLabel = new JLabel("Elementi in top:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
-		panel_2.add(lblNewLabel);
+		JLabel labelElementiTop = new JLabel("Elementi in top:");
+		labelElementiTop.setFont(new Font("Tahoma", Font.BOLD, 17));
+		panel_2.add(labelElementiTop);
 
 		JPanel panel_1 = new JPanel();
 		scrollPane.setViewportView(panel_1);
 
 		List<JPanel> listaTimestampPanel = new ArrayList<JPanel>();
 		JPanel previousPanel = null;
-		for (Variabile v : listaTimestampTop) {
+		for (int i = 0; i < listaTimestampTop.size(); i++) {
 			JPanel timestampPanel = new JPanel();
 			timestampPanel.setBackground(Color.LIGHT_GRAY);
 			if (previousPanel != null)
@@ -133,7 +133,7 @@ public class TopElementsUI {
 		sg.addContainerGap(55, Short.MAX_VALUE);
 		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
 		panel_1.setLayout(gl_panel_1);
-		int i=0;
+		int i = 0;
 		for (Variabile v : listaTimestampTop) {
 			JLabel l = new JLabel("" + v.getNome() + ": " + v.getValore() + ";");
 			l.setHorizontalAlignment(SwingConstants.CENTER);

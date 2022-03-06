@@ -51,6 +51,7 @@ public class BottomsUI {
 	public BottomsUI() {
 		initialize(null);
 	}
+
 	public BottomsUI(JDialog d) {
 		initialize(d);
 	}
@@ -64,52 +65,48 @@ public class BottomsUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		DebugConnector dc = DebugConnector.getInstance();
 		JPanel panel = new JPanel();
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 				.addComponent(panel, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
-				.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE));
+		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE))
-		);
+						.addComponent(panel, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+						.addPreferredGap(ComponentPlacement.RELATED)
+						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)));
 		panel.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblNewLabel_1 = new JLabel("Informazioni livello BOTTOM:");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 17));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewLabel_1, BorderLayout.NORTH);
-		
+
+		JLabel labelInfoLivelloBottom = new JLabel("Informazioni livello BOTTOM:");
+		labelInfoLivelloBottom.setFont(new Font("Tahoma", Font.BOLD, 17));
+		labelInfoLivelloBottom.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(labelInfoLivelloBottom, BorderLayout.NORTH);
+
 		JPanel panel_3 = new JPanel();
 		panel.add(panel_3, BorderLayout.CENTER);
 		panel_3.setLayout(new GridLayout(0, 4, 0, 0));
-		
+
 		List<Variabile> listaTimestampBottom = dc.getBottom(dc.getSelecteQueue());
 
-		JLabel nElementiInBottom = new JLabel("nElementiInBottom: "+listaTimestampBottom.size()+";");
+		JLabel nElementiInBottom = new JLabel("nElementiInBottom: " + listaTimestampBottom.size() + ";");
 		nElementiInBottom.setHorizontalAlignment(SwingConstants.CENTER);
 		nElementiInBottom.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		panel_3.add(nElementiInBottom);
-		
+
 		JPanel panel_2 = new JPanel();
 		scrollPane.setColumnHeaderView(panel_2);
-		
+
 		JLabel lblNewLabel = new JLabel("Elementi in bottom:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		panel_2.add(lblNewLabel);
-		
+
 		JPanel panel_1 = new JPanel();
 		scrollPane.setViewportView(panel_1);
-		
+
 		List<JPanel> listaTimestampPanel = new ArrayList<JPanel>();
 		JPanel previousPanel = null;
-		for (Variabile v : listaTimestampBottom) {
+		for (int i = 0; i < listaTimestampBottom.size(); i++) {
 			JPanel timestampPanel = new JPanel();
 			timestampPanel.setBackground(Color.LIGHT_GRAY);
 			if (previousPanel != null)
@@ -135,7 +132,7 @@ public class BottomsUI {
 		sg.addContainerGap(55, Short.MAX_VALUE);
 		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
 		panel_1.setLayout(gl_panel_1);
-		int i=0;
+		int i = 0;
 		for (Variabile v : listaTimestampBottom) {
 			JLabel l = new JLabel("" + v.getNome() + ": " + v.getValore() + ";");
 			l.setHorizontalAlignment(SwingConstants.CENTER);
@@ -144,7 +141,7 @@ public class BottomsUI {
 			i++;
 		}
 		frame.getContentPane().setLayout(groupLayout);
-		if (d!=null) {
+		if (d != null) {
 			d.setSize(new Dimension(763, 451));
 			d.setContentPane(frame.getContentPane());
 			d.setVisible(true);

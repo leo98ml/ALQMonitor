@@ -53,6 +53,7 @@ public class RungsUI {
 	public RungsUI() {
 		initialize(null);
 	}
+
 	public RungsUI(JDialog d) {
 		initialize(d);
 	}
@@ -65,28 +66,23 @@ public class RungsUI {
 		frame.setBounds(100, 100, 763, 451);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		DebugConnector dc = DebugConnector.getInstance();
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
-		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
-		);
-		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE))
-		);
-		
+		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING).addComponent(scrollPane,
+				Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE));
+		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.TRAILING).addGroup(groupLayout
+				.createSequentialGroup().addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)));
+
 		List<ObjectReference> listaRungs = dc.getRungs(dc.getSelecteQueue());
 
 		JPanel panel_2 = new JPanel();
 		scrollPane.setColumnHeaderView(panel_2);
-		
+
 		JLabel lblNewLabel = new JLabel("Rungs:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		panel_2.add(lblNewLabel);
-		
+
 		List<JPanel> listaRungsPanel = new ArrayList<JPanel>();
 		JPanel previousPanel = null;
 		for (ObjectReference v : listaRungs) {
@@ -102,13 +98,12 @@ public class RungsUI {
 
 					JDialog d = new JDialog(frame, "Rung", true);
 					d.setLocationRelativeTo(frame);
-					new RungUI(d,v);
-				
+					new RungUI(d, v);
+
 				}
 			});
 		}
-		
-		
+
 		JPanel panel_1 = new JPanel();
 		scrollPane.setViewportView(panel_1);
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
@@ -127,19 +122,17 @@ public class RungsUI {
 		sg.addContainerGap(55, Short.MAX_VALUE);
 		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
 		panel_1.setLayout(gl_panel_1);
-		
-		int i=0;
-		for (ObjectReference v : listaRungs) {
-			JLabel rung = new JLabel("Rung "+i);
+
+		for (int i = 0; i < listaRungs.size(); i++) {
+			JLabel rung = new JLabel("Rung " + i);
 			rung.setHorizontalAlignment(SwingConstants.CENTER);
 			rung.setFont(new Font("Tahoma", Font.BOLD, 17));
 			listaRungsPanel.get(i).add(rung);
-			i++;
 		}
-		
+
 		panel_1.setLayout(gl_panel_1);
 		frame.getContentPane().setLayout(groupLayout);
-		if (d!=null) {
+		if (d != null) {
 			d.setSize(new Dimension(763, 451));
 			d.setContentPane(frame.getContentPane());
 			d.setVisible(true);
