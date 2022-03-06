@@ -1,4 +1,4 @@
-package it.unical.dimes.tesi.gui;
+package it.unical.dimes.tesi.gui.backupPlan;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
 
-public class BreakpoinsUI {
+public class BreakpointsUI {
 
 	private JFrame frame;
 	private JTextField textField;
@@ -35,7 +35,7 @@ public class BreakpoinsUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BreakpoinsUI window = new BreakpoinsUI();
+					BreakpointsUI window = new BreakpointsUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class BreakpoinsUI {
 	/**
 	 * Create the application.
 	 */
-	public BreakpoinsUI() {
+	public BreakpointsUI() {
 		initialize();
 	}
 

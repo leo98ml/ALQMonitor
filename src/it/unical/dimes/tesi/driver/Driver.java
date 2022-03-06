@@ -14,8 +14,6 @@ import dataset.Put;
 import it.unical.dimes.elq.ALadderQueue;
 import it.unical.dimes.elq.AtomicEvent;
 import it.unical.dimes.elq.Event;
-import it.unical.dimes.elq.FQ;
-import it.unical.dimes.elq.GroupingPriorityQueue;
 import random.Camel;
 import random.Exponential;
 import random.Pareto;
@@ -87,7 +85,7 @@ public class Driver {
 					int n = Integer.parseInt(comando[1]);
 					if (ladder == null)
 						System.out.println("Prima devi creare una coda col comando new!!!");
-					else if (ladder.size() <= n)
+					else if (ladder.size() >= n)
 						for (int i = 0; i < n; i++) {
 							System.out.println(Double.longBitsToDouble(ladder.dequeue().getTimeStamp()));
 						}
@@ -146,7 +144,7 @@ public class Driver {
 				+ "* test-tagliaCoda-distribuzione-resettaPrima-inizializzaPrima\r\n"
 				+ "    esegue un test con la distribuzione desiderata e con il numero\r\n"
 				+ "    di elementi desiderato, stampando a video il classic hold\r\n" + "* remove-numeroElementi\r\n"
-				+ "    rimuove numeroElemnti elementi dalla coda\r\n" + "* initialize\r\n"
+				+ "    rimuove numeroElemnti elementi dalla coda\r\n" + "* initialize-qsize-distribution\r\n"
 				+ "    inizializza la coda facendo scrap giri di inserimenti\r\n"
 				+ "    e rimozioni per assicurarsi che la struttura sia in uno stato\r\n" + "    intermedio\r\n"
 				+ "* reset\r\n" + "    reinizializza la struttura con i parametri inseriti al momento\r\n"
@@ -310,6 +308,7 @@ public class Driver {
 			incrCount++;
 			for (int i = 0; i < bound && j < qsize; i++, j++) {
 				long lRepr = Double.doubleToLongBits(ts + sd);
+				System.out.println(lRepr);
 				list.add(new Put(lRepr));
 				putList.add(lRepr);
 

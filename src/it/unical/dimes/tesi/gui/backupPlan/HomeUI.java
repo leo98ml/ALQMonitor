@@ -1,4 +1,4 @@
-package it.unical.dimes.tesi.gui;
+package it.unical.dimes.tesi.gui.backupPlan;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -21,7 +21,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import it.unical.dimes.tesi.debug.DebugConnector;
 import it.unical.dimes.tesi.gui.utils.CommonsPopUp;
 
 import javax.swing.SwingConstants;
@@ -58,22 +57,17 @@ public class HomeUI {
 	 * Create the application.
 	 */
 	public HomeUI() {
-		initialize(null);
+		initialize();
 	}
 
-	public HomeUI(JFrame f) {
-		initialize(f);
-	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize(JFrame f) {
-		
-		frmAlqMonitor = f==null?new JFrame():f;
-		frmAlqMonitor.getContentPane().removeAll();
+	private void initialize() {
+		frmAlqMonitor = new JFrame();
 		frmAlqMonitor.setTitle("ALQ Monitor");
 		frmAlqMonitor.setIconImage(Toolkit.getDefaultToolkit().getImage(HomeUI.class.getResource("/it/unical/dimes/tesi/gui/resources/unical.gif")));
-		if (f==null) frmAlqMonitor.setBounds(100, 100, 966, 522);
+		frmAlqMonitor.setBounds(100, 100, 899, 481);
 		frmAlqMonitor.setResizable(true);
 		frmAlqMonitor.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -90,19 +84,6 @@ public class HomeUI {
 		textField.setColumns(60);
 		
 		JButton btnNewButton = new JButton("START");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String[] ipAndPort = textField.getText().split(":");
-				try {
-					DebugConnector.createInstance(ipAndPort[1],ipAndPort[0]);
-				} catch (Exception e1) {
-					System.err.println("Invalid port or ip");
-					return;
-				}
-				frmAlqMonitor.getContentPane().removeAll();
-				new QueueUI(frmAlqMonitor);
-			}
-		});
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 17));
 		btnNewButton.setBackground(new Color(178, 34, 34));
