@@ -259,14 +259,19 @@ public class DebugConnector implements DebugService {
 				if (f.name().equals("info")) {
 					ObjectReference event = (ObjectReference) head.getValue(f);
 					LongValue ts = null;
+					int ifComposite = 0;
 					for (Field f1 : ((ClassType) event.referenceType()).allFields()) {
 						if (f1.name().equals("timestamp")) {
 							ts = (LongValue) event.getValue(f1);
 						}
+						if (f1.name().equals("list")) {
+							ifComposite = fromLinkedEventListToList((ObjectReference) event.getValue(f1)).size();
+						}
 					}
 					Variabile v = new Variabile();
 					v.setNome("timestamp");
-					v.setValore("" + Double.longBitsToDouble(ts.value()));
+					v.setValore(ts.value()+((ifComposite==0)?"":"[x"+ifComposite+"]"));
+//					v.setValore(Double.longBitsToDouble(ts.value())+((ifComposite==0)?"":"[x"+ifComposite+"]"));
 					v.setTipo("long");
 					ret.add(v);
 				}
@@ -333,7 +338,7 @@ public class DebugConnector implements DebugService {
 	}
 
 	public ObjectReference getSelecteQueue() {
-		List<ObjectReference> lor = null;
+		List<ObjectReference> lor = new ArrayList<ObjectReference>();
 		for (ReferenceType tr : this.remoteJVM.allClasses()) {
 			if (tr.classObject().reflectedType().signature().contains("ALadderQueue")) {
 				lor = tr.instances(Integer.MAX_VALUE);
@@ -345,7 +350,7 @@ public class DebugConnector implements DebugService {
 				return or;
 			}
 		}
-		throw new RuntimeException();
+		return null;
 	}
 
 	public void setSelecteQueue(ObjectReference selecteQueue) {
