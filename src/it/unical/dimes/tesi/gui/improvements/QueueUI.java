@@ -47,7 +47,6 @@ import com.sun.jdi.request.BreakpointRequest;
 import it.unical.dimes.tesi.debug.Breakpoint;
 import it.unical.dimes.tesi.debug.DebugConnector;
 import it.unical.dimes.tesi.debug.Variabile;
-import it.unical.dimes.tesi.gui.TopElementsUI;
 import it.unical.dimes.tesi.gui.utils.CommonsPopUp;
 
 public class QueueUI {

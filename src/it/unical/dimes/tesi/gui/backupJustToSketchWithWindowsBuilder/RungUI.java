@@ -1,23 +1,21 @@
-package it.unical.dimes.tesi.gui.backupPlan;
+package it.unical.dimes.tesi.gui.backupJustToSketchWithWindowsBuilder;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import java.awt.Font;
 import java.awt.Color;
-import javax.swing.SwingConstants;
-import java.awt.FlowLayout;
-import javax.swing.BoxLayout;
+import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.GridLayout;
 
-public class TopElementsUI {
+import javax.swing.GroupLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class RungUI {
 
 	private JFrame frame;
 
@@ -28,7 +26,7 @@ public class TopElementsUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TopElementsUI window = new TopElementsUI();
+					RungUI window = new RungUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +38,7 @@ public class TopElementsUI {
 	/**
 	 * Create the application.
 	 */
-	public TopElementsUI() {
+	public RungUI() {
 		initialize();
 	}
 
@@ -70,7 +68,7 @@ public class TopElementsUI {
 		);
 		panel.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_1 = new JLabel("Informazioni livello TOP");
+		JLabel lblNewLabel_1 = new JLabel("Informazioni Rung i:");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1, BorderLayout.NORTH);
@@ -137,7 +135,7 @@ public class TopElementsUI {
 		JPanel panel_2 = new JPanel();
 		scrollPane.setColumnHeaderView(panel_2);
 		
-		JLabel lblNewLabel = new JLabel("Elementi in top:");
+		JLabel lblNewLabel = new JLabel("Buckets:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		panel_2.add(lblNewLabel);
 		
@@ -176,23 +174,124 @@ public class TopElementsUI {
 		);
 		timestamp_2.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_1_1_2 = new JLabel("Timestamp: 102101202");
-		lblNewLabel_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		timestamp_2.add(lblNewLabel_1_1_2, BorderLayout.CENTER);
+		JPanel timestamp_4 = new JPanel();
+		timestamp_4.setBackground(Color.LIGHT_GRAY);
+		timestamp_2.add(timestamp_4, BorderLayout.CENTER);
+		timestamp_4.setLayout(new GridLayout(0, 4, 0, 0));
+		
+		JLabel lblNewLabel_1_1_3_1_3_1_2 = new JLabel("Bucket 2");
+		lblNewLabel_1_1_3_1_3_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_3_1_2.setFont(new Font("Tahoma", Font.BOLD, 17));
+		timestamp_4.add(lblNewLabel_1_1_3_1_3_1_2);
+		
+		JLabel lblNewLabel_1_1_3_3_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_3_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_3_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_4.add(lblNewLabel_1_1_3_3_2);
+		
+		JLabel lblNewLabel_1_1_3_1_4_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_4_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_4_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_4.add(lblNewLabel_1_1_3_1_4_2);
+		
+		JLabel lblNewLabel_1_1_3_1_1_3_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_1_3_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_1_3_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_4.add(lblNewLabel_1_1_3_1_1_3_2);
+		
+		JLabel lblNewLabel_1_1_3_2_2_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_2_2_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_2_2_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_4.add(lblNewLabel_1_1_3_2_2_2);
 		timestamp_1.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_1_1_1 = new JLabel("Timestamp: 102101202");
-		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		timestamp_1.add(lblNewLabel_1_1_1, BorderLayout.CENTER);
-		timestamp.setLayout(new BorderLayout(0, 0));
+		JPanel timestamp_3 = new JPanel();
+		timestamp_3.setBackground(Color.LIGHT_GRAY);
+		timestamp_1.add(timestamp_3, BorderLayout.CENTER);
+		timestamp_3.setLayout(new GridLayout(0, 4, 0, 0));
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Timestamp: 102101202");
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		timestamp.add(lblNewLabel_1_1, BorderLayout.CENTER);
+		JLabel lblNewLabel_1_1_3_1_3_1_1 = new JLabel("Bucket 1");
+		lblNewLabel_1_1_3_1_3_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_3_1_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		timestamp_3.add(lblNewLabel_1_1_3_1_3_1_1);
+		
+		JLabel lblNewLabel_1_1_3_3_1 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_3_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_3.add(lblNewLabel_1_1_3_3_1);
+		
+		JLabel lblNewLabel_1_1_3_1_4_1 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_4_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_4_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_3.add(lblNewLabel_1_1_3_1_4_1);
+		
+		JLabel lblNewLabel_1_1_3_1_1_3_1 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_1_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_1_3_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_3.add(lblNewLabel_1_1_3_1_1_3_1);
+		
+		JLabel lblNewLabel_1_1_3_2_2_1 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_2_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_2_2_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp_3.add(lblNewLabel_1_1_3_2_2_1);
+		timestamp.setLayout(new GridLayout(0, 4, 0, 0));
+		
+		JLabel lblNewLabel_1_1_3_1_3_1 = new JLabel("Bucket 0");
+		lblNewLabel_1_1_3_1_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_3_1.setFont(new Font("Tahoma", Font.BOLD, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_3_1);
+		
+		JLabel lblNewLabel_1_1_3_3 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_3);
+		
+		JLabel lblNewLabel_1_1_3_1_4 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_4);
+		
+		JLabel lblNewLabel_1_1_3_1_1_3 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_1_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_1_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_1_3);
+		
+		JLabel lblNewLabel_1_1_3_2_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_2_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_2_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_2_2);
+		
+		JLabel lblNewLabel_1_1_3_1_5 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_5.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_5);
+		
+		JLabel lblNewLabel_1_1_3_1_1_4 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_1_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_1_4.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_1_4);
+		
+		JLabel lblNewLabel_1_1_3_1_1_1_1 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_1_1_1);
+		
+		JLabel lblNewLabel_1_1_3_1_2_1_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_2_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_2_1_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_2_1_2);
+		
+		JLabel lblNewLabel_1_1_3_1_2_1_1_1 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_2_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_2_1_1_1);
+		
+		JLabel lblNewLabel_1_1_3_1_2_2 = new JLabel("Variabile: valore;");
+		lblNewLabel_1_1_3_1_2_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_3_1_2_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		timestamp.add(lblNewLabel_1_1_3_1_2_2);
 		panel_1.setLayout(gl_panel_1);
 		frame.getContentPane().setLayout(groupLayout);
 	}
+
 }

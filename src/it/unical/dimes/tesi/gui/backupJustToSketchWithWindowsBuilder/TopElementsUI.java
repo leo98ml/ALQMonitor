@@ -1,21 +1,23 @@
-package it.unical.dimes.tesi.gui.backupPlan;
+package it.unical.dimes.tesi.gui.backupJustToSketchWithWindowsBuilder;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.Font;
-import java.awt.GridLayout;
 
-import javax.swing.GroupLayout;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
+import java.awt.BorderLayout;
+import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JScrollPane;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.GridLayout;
 
-public class BottomsUI {
+public class TopElementsUI {
 
 	private JFrame frame;
 
@@ -26,7 +28,7 @@ public class BottomsUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BottomsUI window = new BottomsUI();
+					TopElementsUI window = new TopElementsUI();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +40,7 @@ public class BottomsUI {
 	/**
 	 * Create the application.
 	 */
-	public BottomsUI() {
+	public TopElementsUI() {
 		initialize();
 	}
 
@@ -68,7 +70,7 @@ public class BottomsUI {
 		);
 		panel.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_1 = new JLabel("Informazioni livello BOTTOM:");
+		JLabel lblNewLabel_1 = new JLabel("Informazioni livello TOP");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 17));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel_1, BorderLayout.NORTH);
@@ -135,7 +137,7 @@ public class BottomsUI {
 		JPanel panel_2 = new JPanel();
 		scrollPane.setColumnHeaderView(panel_2);
 		
-		JLabel lblNewLabel = new JLabel("Elementi in bottom:");
+		JLabel lblNewLabel = new JLabel("Elementi in top:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 17));
 		panel_2.add(lblNewLabel);
 		
@@ -193,5 +195,4 @@ public class BottomsUI {
 		panel_1.setLayout(gl_panel_1);
 		frame.getContentPane().setLayout(groupLayout);
 	}
-
 }
