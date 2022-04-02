@@ -1,4 +1,4 @@
-package it.unical.dimes.tesi.gui.improvements;
+package it.unical.dimes.tesi.gui.production;
 
 import java.awt.Color;
 import java.awt.EventQueue;

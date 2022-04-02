@@ -1,4 +1,4 @@
-package it.unical.dimes.tesi.gui.improvements;
+package it.unical.dimes.tesi.gui.production;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -126,7 +126,7 @@ public class QueueUI {
 		updatePanelBP(dc, frame, scrollPane_1);
 		panel_1_1.setLayout(gl_panel_1_1);
 
-		updatePanelBucketSelected(null);
+		updatePanelBucketSelected(null,"");
 
 		JPanel panel_4 = new JPanel();
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
@@ -375,9 +375,8 @@ public class QueueUI {
 		});
 	}
 
-	private void updatePanelBucketSelected(ObjectReference bucket) {
+	private void updatePanelBucketSelected(ObjectReference bucket,String ts) {
 		panelShowBucket.removeAll();
-
 		JLabel labelShownBucket = new JLabel("Bucket selcted:");
 		labelShownBucket.setHorizontalAlignment(SwingConstants.CENTER);
 		labelShownBucket.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -393,6 +392,9 @@ public class QueueUI {
 						.addPreferredGap(ComponentPlacement.RELATED).addComponent(scrollPaneBucket)));
 		panelShowBucket.setLayout(gl_panelShowBucket);
 		if ((paused) && bucket != null) {
+			DebugConnector dc = DebugConnector.getInstance();
+			labelShownBucket.setText("Bucket selcted ("+"size: " + dc.getBucketElements(bucket).size()+"; ts:"+ts+"):");
+			labelShownBucket.setFont(new Font("Tahoma", Font.PLAIN, 12));
 			JPanel panelTimestamp = new JPanel();
 			scrollPaneBucket.setViewportView(panelTimestamp);
 			List<Variabile> listaTimestampBucketSelected = DebugConnector.getInstance().getBucketElements(bucket);
@@ -744,7 +746,7 @@ public class QueueUI {
 
 	private void constructLadder() {
 		panelLadder.removeAll();
-		updatePanelBucketSelected(null);
+		updatePanelBucketSelected(null,"");
 		panelLadder.setBackground(new Color(255, 160, 122));
 		DebugConnector dc = DebugConnector.getInstance();
 		JLabel labelLadder = new JLabel("LADDER");
@@ -874,18 +876,19 @@ public class QueueUI {
 								.createParallelGroup(Alignment.LEADING);
 						for (ObjectReference bucket : listaBucket) {
 							JPanel panelBucket = new JPanel();
-							panelBucket.addMouseListener(new MouseAdapter() {
-								@Override
-								public void mouseClicked(MouseEvent e) {
-									updatePanelBucketSelected(bucket);
-								}
-							});
 							JLabel labelBucket = new JLabel("Bucket " + j);
 							labelBucket.setFont(new Font("Tahoma", Font.PLAIN, 13));
 							Double dTS = Double.longBitsToDouble(bucketWidth * j + l);
+							String ts = (asDouble ? Double.toString(dTS) : ""+(bucketWidth * j + l));
 							JLabel labelTS = new JLabel(
-									"ts: " + (asDouble ? Double.toString(dTS) : bucketWidth * j + l));
+									"ts: " + ts);
 							labelTS.setFont(new Font("Tahoma", Font.PLAIN, 9));
+							panelBucket.addMouseListener(new MouseAdapter() {
+								@Override
+								public void mouseClicked(MouseEvent e) {
+									updatePanelBucketSelected(bucket,ts);
+								}
+							});
 							JLabel labelSize = new JLabel("size: " + dc.getBucketElements(bucket).size());
 							labelSize.setFont(new Font("Tahoma", Font.PLAIN, 13));
 							GroupLayout groupLayoutPanelBucket = new GroupLayout(panelBucket);

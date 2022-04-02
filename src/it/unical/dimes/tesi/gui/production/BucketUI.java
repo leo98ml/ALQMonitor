@@ -1,4 +1,4 @@
-package it.unical.dimes.tesi.gui.improvements;
+package it.unical.dimes.tesi.gui.production;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,12 +22,15 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 
+import com.sun.jdi.ObjectReference;
+
 import it.unical.dimes.tesi.debug.DebugConnector;
 import it.unical.dimes.tesi.debug.Variabile;
 
-public class TopElementsUI {
+public class BucketUI {
 
 	private JFrame frame;
+	private ObjectReference bucket;
 
 	/**
 	 * Launch the application.
@@ -36,7 +39,7 @@ public class TopElementsUI {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TopElementsUI window = new TopElementsUI();
+					BucketUI window = new BucketUI(null, null);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,11 +51,8 @@ public class TopElementsUI {
 	/**
 	 * Create the application.
 	 */
-	public TopElementsUI() {
-		initialize(null);
-	}
-
-	public TopElementsUI(JDialog d) {
+	public BucketUI(JDialog d, ObjectReference bucket) {
+		this.bucket = bucket;
 		initialize(d);
 	}
 
@@ -63,7 +63,7 @@ public class TopElementsUI {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 763, 451);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		DebugConnector dc = DebugConnector.getInstance();
 		JPanel panel = new JPanel();
 
 		JScrollPane scrollPane = new JScrollPane();
@@ -78,36 +78,35 @@ public class TopElementsUI {
 						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)));
 		panel.setLayout(new BorderLayout(0, 0));
 
-		JLabel labelInfoLivTop = new JLabel("Informazioni livello TOP");
-		labelInfoLivTop.setFont(new Font("Tahoma", Font.BOLD, 17));
-		labelInfoLivTop.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(labelInfoLivTop, BorderLayout.NORTH);
+		JLabel labelInformazioniBucket = new JLabel("Informazioni Bucket:");
+		labelInformazioniBucket.setFont(new Font("Tahoma", Font.BOLD, 17));
+		labelInformazioniBucket.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(labelInformazioniBucket, BorderLayout.NORTH);
 
 		JPanel panel_3 = new JPanel();
 		panel.add(panel_3, BorderLayout.CENTER);
 		panel_3.setLayout(new GridLayout(0, 4, 0, 0));
 
-		DebugConnector dc = DebugConnector.getInstance();
-		List<Variabile> listaTimestampTop = dc.getTop(dc.getSelecteQueue());
+		List<Variabile> listaTimestampBucket = dc.getBucketElements(this.bucket);
 
-		JLabel nElementiInTop = new JLabel("nElementiInTop: " + listaTimestampTop.size() + ";");
-		nElementiInTop.setHorizontalAlignment(SwingConstants.CENTER);
-		nElementiInTop.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		panel_3.add(nElementiInTop);
+		JLabel nElementiInBucket = new JLabel("nElementiInBucket: " + listaTimestampBucket.size() + ";");
+		nElementiInBucket.setHorizontalAlignment(SwingConstants.CENTER);
+		nElementiInBucket.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		panel_3.add(nElementiInBucket);
 
 		JPanel panel_2 = new JPanel();
 		scrollPane.setColumnHeaderView(panel_2);
 
-		JLabel labelElementiTop = new JLabel("Elementi in top:");
-		labelElementiTop.setFont(new Font("Tahoma", Font.BOLD, 17));
-		panel_2.add(labelElementiTop);
+		JLabel labelElementiInBucket = new JLabel("Elementi in bucket:");
+		labelElementiInBucket.setFont(new Font("Tahoma", Font.BOLD, 17));
+		panel_2.add(labelElementiInBucket);
 
 		JPanel panel_1 = new JPanel();
 		scrollPane.setViewportView(panel_1);
 
 		List<JPanel> listaTimestampPanel = new ArrayList<JPanel>();
 		JPanel previousPanel = null;
-		for (int i = 0; i < listaTimestampTop.size(); i++) {
+		for (int i = 0; i < listaTimestampBucket.size(); ++i) {
 			JPanel timestampPanel = new JPanel();
 			timestampPanel.setBackground(Color.LIGHT_GRAY);
 			if (previousPanel != null)
@@ -134,7 +133,7 @@ public class TopElementsUI {
 		gl_panel_1.setVerticalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
 		panel_1.setLayout(gl_panel_1);
 		int i = 0;
-		for (Variabile v : listaTimestampTop) {
+		for (Variabile v : listaTimestampBucket) {
 			JLabel l = new JLabel("" + v.getNome() + ": " + v.getValore() + ";");
 			l.setHorizontalAlignment(SwingConstants.CENTER);
 			l.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -149,4 +148,5 @@ public class TopElementsUI {
 			d.pack();
 		}
 	}
+
 }
