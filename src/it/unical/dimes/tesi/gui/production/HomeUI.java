@@ -101,22 +101,54 @@ public class HomeUI {
 		JLabel lblNewLabel = new JLabel("Inserisci indirizzo debugger:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		
+		JButton btnLocal = new JButton("LOCAL");
+		btnLocal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					DebugConnector.createInstance();
+				} catch (Exception e1) {
+				}
+				frmAlqMonitor.getContentPane().removeAll();
+				new QueueUI(frmAlqMonitor);
+			}
+		});
+		btnLocal.setForeground(Color.WHITE);
+		btnLocal.setFont(new Font("Tahoma", Font.BOLD, 17));
+		btnLocal.setBackground(new Color(178, 34, 34));
+		
 		GroupLayout groupLayout = new GroupLayout(frmAlqMonitor.getContentPane());
-		groupLayout.setHorizontalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup().addGap(172).addComponent(textField).addGap(167))
-				.addGroup(Alignment.TRAILING,
-						groupLayout.createSequentialGroup().addGap(308)
-								.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE).addGap(301))
-				.addGroup(groupLayout.createSequentialGroup().addGap(390)
-						.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addGap(408)));
-		groupLayout.setVerticalGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup().addGap(151).addComponent(lblNewLabel)
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addPreferredGap(ComponentPlacement.RELATED).addComponent(btnNewButton)
-						.addContainerGap(183, Short.MAX_VALUE)));
+		
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(172)
+					.addComponent(textField)
+					.addGap(167))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(308)
+					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+					.addGap(301))
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(356)
+					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnLocal, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+					.addGap(345))
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(151)
+					.addComponent(lblNewLabel)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnLocal, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnNewButton))
+					.addContainerGap(183, Short.MAX_VALUE))
+		);
 		frmAlqMonitor.getContentPane().setLayout(groupLayout);
 	}
 }

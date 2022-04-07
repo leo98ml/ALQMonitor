@@ -418,7 +418,7 @@ public class QueueUI {
 						Short.MAX_VALUE);
 			}
 			for (JPanel p : listaTimestampPanel) {
-				sg.addComponent(p, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE)
+				sg.addComponent(p, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED);
 			}
 			gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
@@ -431,7 +431,7 @@ public class QueueUI {
 					if (!v.getValore().contains("[")) {
 						v.setValore("" + Double.longBitsToDouble(Long.parseLong(v.getValore())));
 					} else {
-						String[] splitted = v.getValore().split("[");
+						String[] splitted = v.getValore().split("\\[");
 						v.setValore("" + Double.longBitsToDouble(Long.parseLong(splitted[0])) + "[" + splitted[1]);
 					}
 				}
@@ -605,7 +605,7 @@ public class QueueUI {
 						Short.MAX_VALUE);
 			}
 			for (JPanel p : listaTimestampPanel) {
-				sg.addComponent(p, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE)
+				sg.addComponent(p, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED);
 			}
 			gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
@@ -619,7 +619,7 @@ public class QueueUI {
 					if (!v.getValore().contains("[")) {
 						v.setValore("" + Double.longBitsToDouble(Long.parseLong(v.getValore())));
 					} else {
-						String[] splitted = v.getValore().split("[");
+						String[] splitted = v.getValore().split("\\[");
 						v.setValore("" + Double.longBitsToDouble(Long.parseLong(splitted[0])) + "[" + splitted[1]);
 					}
 				}
@@ -715,7 +715,7 @@ public class QueueUI {
 						Short.MAX_VALUE);
 			}
 			for (JPanel p : listaTimestampPanel) {
-				sg.addComponent(p, GroupLayout.PREFERRED_SIZE, 190, GroupLayout.PREFERRED_SIZE)
+				sg.addComponent(p, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
 						.addPreferredGap(ComponentPlacement.RELATED);
 			}
 			gl_panel_1.setHorizontalGroup(gl_panel_1.createParallelGroup(Alignment.LEADING).addGroup(sg));
@@ -729,7 +729,7 @@ public class QueueUI {
 					if (!v.getValore().contains("[")) {
 						v.setValore("" + Double.longBitsToDouble(Long.parseLong(v.getValore())));
 					} else {
-						String[] splitted = v.getValore().split("[");
+						String[] splitted = v.getValore().split("\\[");
 						v.setValore("" + Double.longBitsToDouble(Long.parseLong(splitted[0])) + "[" + splitted[1]);
 					}
 				}

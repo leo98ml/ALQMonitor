@@ -91,21 +91,32 @@ public class HomeUI {
 		JLabel lblNewLabel = new JLabel("Inserisci indirizzo debugger:");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		
+		JButton btnLocal = new JButton("LOCAL");
+		btnLocal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnLocal.setForeground(Color.WHITE);
+		btnLocal.setFont(new Font("Tahoma", Font.BOLD, 17));
+		btnLocal.setBackground(new Color(178, 34, 34));
 		GroupLayout groupLayout = new GroupLayout(frmAlqMonitor.getContentPane());
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(172)
-					.addComponent(textField)
+					.addComponent(textField, 546, 546, 546)
 					.addGap(167))
-				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+				.addGroup(groupLayout.createSequentialGroup()
 					.addGap(308)
 					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
 					.addGap(301))
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(390)
-					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addGap(408))
+					.addGap(356)
+					.addComponent(btnNewButton, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(btnLocal, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+					.addGap(345))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -115,7 +126,9 @@ public class HomeUI {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnNewButton)
+					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
+						.addComponent(btnLocal, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+						.addComponent(btnNewButton))
 					.addContainerGap(183, Short.MAX_VALUE))
 		);
 		frmAlqMonitor.getContentPane().setLayout(groupLayout);

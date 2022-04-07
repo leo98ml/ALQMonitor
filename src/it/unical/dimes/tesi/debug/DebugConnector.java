@@ -32,9 +32,11 @@ import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.VirtualMachineManager;
 import com.sun.jdi.connect.AttachingConnector;
 import com.sun.jdi.connect.Connector;
+import com.sun.jdi.connect.LaunchingConnector;
 import com.sun.jdi.request.BreakpointRequest;
 
 import it.unical.dimes.elq.ALadderQueue;
+import it.unical.dimes.tesi.gui.production.UseLocalQueue;
 
 public class DebugConnector implements DebugService {
 
@@ -44,15 +46,34 @@ public class DebugConnector implements DebugService {
 	private ObjectReference selecteQueue = null;
 	private static DebugConnector dc = null;
 	private HashMap<Breakpoint, BreakpointRequest> breakpointRequests = null;
-	
+
 	private DebugConnector() {
-	};
+		try {
+			this.remoteJVM = connectAndLaunchVM();
+			breakpoints = new HashSet<Breakpoint>();
+			breakpointRequests = new HashMap<Breakpoint, BreakpointRequest>();
+			getAlqs();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+	}
 
 	private DebugConnector(String port, String ip) throws Exception {
 		this.remoteJVM = connectToVM(port, ip);
 		breakpoints = new HashSet<Breakpoint>();
 		breakpointRequests = new HashMap<Breakpoint, BreakpointRequest>();
 		getAlqs();
+	}
+
+	public VirtualMachine connectAndLaunchVM() throws Exception {
+		LaunchingConnector launchingConnector = Bootstrap.virtualMachineManager().defaultConnector();
+		Map<String, Connector.Argument> arguments = launchingConnector.defaultArguments();
+		arguments.get("main").setValue(UseLocalQueue.class.getName());
+		arguments.get("suspend").setValue("false");
+		String classpath =  "\""+System.getProperty("java.class.path")+"\"";
+		arguments.get("options").setValue("-cp " + classpath);
+		return launchingConnector.launch(arguments);
 	}
 
 	public VirtualMachine getRemoteJVM() {
@@ -65,7 +86,8 @@ public class DebugConnector implements DebugService {
 	}
 
 	public static DebugConnector getInstance() {
-		if (dc==null) throw new RuntimeException("Prima va creata l'istanza");
+		if (dc == null)
+			throw new RuntimeException("Prima va creata l'istanza");
 		return dc;
 	}
 
@@ -74,8 +96,17 @@ public class DebugConnector implements DebugService {
 		return dc;
 	}
 
+	public static DebugConnector createInstance() throws Exception {
+		dc = new DebugConnector();
+		return dc;
+	}
+
 	public static void disconnect() {
-		dc.remoteJVM.dispose();
+		try {
+			dc.remoteJVM.dispose();
+		} catch (Exception e) {
+			
+		}
 		dc = null;
 	}
 
@@ -270,7 +301,7 @@ public class DebugConnector implements DebugService {
 					}
 					Variabile v = new Variabile();
 					v.setNome("timestamp");
-					v.setValore(ts.value()+((ifComposite==0)?"":"[x"+ifComposite+"]"));
+					v.setValore(ts.value() + ((ifComposite == 0) ? "" : "[x" + ifComposite + "]"));
 //					v.setValore(Double.longBitsToDouble(ts.value())+((ifComposite==0)?"":"[x"+ifComposite+"]"));
 					v.setTipo("long");
 					ret.add(v);
